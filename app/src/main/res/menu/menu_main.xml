@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="@string/first"
+        android:id="@+id/fItem"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/sItem"
+        android:title="@string/second"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/tItem"
+        android:title="@string/third"
+        app:showAsAction="ifRoom"/>
+
+</menu>

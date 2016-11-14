@@ -3,4 +3,8 @@
     <string name="app_name">Mon Application</string>
     <string name="hello">bonjour le monde</string>
     <string name="button">mon boutton</string>
+    <string name="first">premier</string>
+    <string name="second">deuxieme</string>
+    <string name="message">mon deuxième item</string>
+    <string name="third">troisième</string>
 </resources>
