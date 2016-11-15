@@ -7,4 +7,5 @@
     <string name="message">mon deuxième item</string>
     <string name="third">troisième</string>
     <string name="donwloaded">done</string>
+    <string name="done">téléchargement fini</string>
 </resources>

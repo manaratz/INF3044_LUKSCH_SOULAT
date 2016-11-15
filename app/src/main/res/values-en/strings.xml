@@ -8,4 +8,5 @@
     <string name="message">my second item</string>
     <string name="third">third</string>
     <string name="donwloaded">Bieres json downloaded !</string>
+    <string name="done"></string>
 </resources>

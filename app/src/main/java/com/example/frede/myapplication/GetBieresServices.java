@@ -3,8 +3,9 @@ package com.example.frede.myapplication;
 import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-import android.widget.Toast;
+
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -85,6 +86,8 @@ public class GetBieresServices extends IntentService {
                 copyInputStreamToFile(conn.getInputStream(),
                         new File(getCacheDir(), "bieres.json"));
                 Log.d("tag", "Bieres json downloaded !");
+                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(SecondeActivity.BIERS_UPDATE));
+
 
             }
         }catch (MalformedURLException e) {
