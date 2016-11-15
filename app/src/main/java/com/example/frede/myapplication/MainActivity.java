@@ -25,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, getString(R.string.hello), Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, getString(R.string.hello), Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(MainActivity.this, SecondeActivity.class);
+                startActivity(i);
             }
         });
     }
@@ -36,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    Intent intent = new Intent(this, MainActivity.class);
-    PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -62,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.tItem :
 
-
+                Intent intent = new Intent(this, MainActivity.class);
+                PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 NotificationCompat.Builder builder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                         .setContentTitle("My notif")
@@ -70,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                         .setContentIntent(contentIntent)
                         .setAutoCancel(true)
                         .setContentText("My content");
+
 
                 NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                 manager.notify(1,builder.build());

@@ -9,5 +9,7 @@ public class SecondeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seconde);
+
+        GetBieresServices.startActionBiers(this);
     }
 }

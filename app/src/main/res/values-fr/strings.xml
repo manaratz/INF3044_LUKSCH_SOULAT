@@ -7,4 +7,5 @@
     <string name="second">deuxieme</string>
     <string name="message">mon deuxième item</string>
     <string name="third">troisième</string>
+    <string name="donwloaded">Bieres json downloaded !</string>
 </resources>

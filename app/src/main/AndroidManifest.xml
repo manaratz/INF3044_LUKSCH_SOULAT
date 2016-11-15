@@ -19,7 +19,10 @@
 
         <service
             android:name=".GetBieresServices"
-            android:exported="false"></service>
+            android:exported="false">
+
+        </service>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
