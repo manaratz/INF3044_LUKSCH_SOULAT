@@ -10,6 +10,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StreamCorruptedException;
+
 public class SecondeActivity extends AppCompatActivity {
 
     @Override
@@ -32,5 +40,20 @@ public class SecondeActivity extends AppCompatActivity {
 
             }
         }
+    public JSONArray getBiersFromFile() {
+        try {
+            InputStream is = new FileInputStream(getCacheDir()+ "/"+"bieres.json");
+            byte[] buffer = new byte[is.available()];
+            is.read(buffer);
+            is.close();
+            return new JSONArray(new String(buffer,"UTF-8"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new JSONArray();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return new JSONArray();
+        }
+    }
 }
 
