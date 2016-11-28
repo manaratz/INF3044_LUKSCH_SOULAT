@@ -34,9 +34,16 @@ public class SecondeActivity extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(new BierUpdate(),intentFilter);
         //
         JSONArray biers = getBiersFromFile();
-        RecyclerView r = (RecyclerView) findViewById(R.id.rv_biere);
-        r.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        r.setAdapter(new BiersAdapter(biers));
+        if(biers == null)
+        {
+            Toast.makeText(SecondeActivity.this,"error",Toast.LENGTH_LONG).show();
+            Log.d("tag","error");
+        }
+        else {
+            RecyclerView r = (RecyclerView) findViewById(R.id.rv_biere);
+            r.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+            r.setAdapter(new BiersAdapter(biers));
+        }
     }
 
 
@@ -64,13 +71,13 @@ public class SecondeActivity extends AppCompatActivity {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            return new JSONArray();
+            return null;
         } catch (IOException e) {
             e.printStackTrace();
-            return new JSONArray();
+            return null;
         } catch (JSONException e) {
             e.printStackTrace();
-            return new JSONArray();
+            return null;
         }
     }
 }
