@@ -1,11 +1,7 @@
 <resources>
-    <string name="app_name">Mon Application</string>
-    <string name="hello">bonjour le monde</string>
-    <string name="button">mon boutton</string>
-    <string name="first">premier</string>
-    <string name="second">second</string>
-    <string name="message">mon deuxième item</string>
-    <string name="third">troisième</string>
-    <string name="donwloaded">done</string>
-    <string name="done">téléchargement fini</string>
+    <string name="app_name">Hearthstone Cards</string>
+    <string name="random">Random</string>
+    <string name="alpha">Alphabetical order</string>
+    <string name="setting">Settings</string>
+    <string name="downloaded">File downloaded</string>
 </resources>

@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="@string/first"
+        android:title="@string/random"
         android:id="@+id/fItem"
-        app:showAsAction="ifRoom"
+        app:showAsAction="never"
         />
     <item
         android:id="@+id/sItem"
-        android:title="@string/second"
-        app:showAsAction="ifRoom"
+        android:title="@string/alpha"
+        app:showAsAction="never"
         />
     <item
         android:id="@+id/tItem"
-        android:title="@string/third"
-        app:showAsAction="ifRoom"/>
+        android:title="@string/setting"
+        app:showAsAction="never"/>
 
 </menu>

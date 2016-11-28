@@ -78,7 +78,7 @@ public class GetBieresServices extends IntentService {
         Log.d("tag","Thread service name:"+Thread.currentThread().getName());
         URL url = null;
         try {
-            url = new URL("http://binouze.fabrigli.fr/bieres.json");
+            url = new URL("https://api.hearthstonejson.com/v1/15300/enUS/cards.json");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();

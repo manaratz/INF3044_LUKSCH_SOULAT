@@ -21,16 +21,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(MainActivity.this, getString(R.string.hello), Toast.LENGTH_LONG).show();
-
-                Intent i = new Intent(MainActivity.this, SecondeActivity.class);
-                startActivity(i);
-            }
-        });
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.hearthstone_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("    Hearthstone Cards");
     }
 
     @Override
@@ -47,14 +41,18 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.fItem :
-                Toast.makeText(MainActivity.this,getString(R.string.first),Toast.LENGTH_LONG).show();
-
+                Intent i = new Intent(MainActivity.this, SecondeActivity.class);
+                startActivity(i);
                 break;
 
             case R.id.sItem :
+                Intent j = new Intent(MainActivity.this, AlphaActivity.class);
+                startActivity(j);
+                break;
+            case R.id.tItem :
                 new AlertDialog.Builder(MainActivity.this)
-                        .setTitle(R.string.second)
-                        .setMessage(R.string.message)
+                        .setTitle("Settings")
+                        .setMessage("Back color :")
                         .setNeutralButton("ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -62,10 +60,8 @@ public class MainActivity extends AppCompatActivity {
                             }
                         })
                         .show();
-                break;
-            case R.id.tItem :
 
-                Intent intent = new Intent(this, MainActivity.class);
+          /*      Intent intent = new Intent(this, MainActivity.class);
                 PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 NotificationCompat.Builder builder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
@@ -80,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 manager.notify(1,builder.build());
 
 
-
+*/
             default:
                 break;
         }

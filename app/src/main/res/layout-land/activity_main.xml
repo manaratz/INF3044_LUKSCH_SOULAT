@@ -4,19 +4,14 @@
     android:layout_height="match_parent">
 
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:text="@string/button"
-        android:id="@+id/button" />
+
 
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.25"
-        android:text="@string/hello"
+        android:text="hello"
         />
 
 

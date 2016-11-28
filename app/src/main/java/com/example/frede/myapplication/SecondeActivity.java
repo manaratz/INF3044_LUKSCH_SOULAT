@@ -52,7 +52,7 @@ public class SecondeActivity extends AppCompatActivity {
             @Override
             public void onReceive(Context context, Intent intent) {
 
-                Toast.makeText(SecondeActivity.this,getString(R.string.donwloaded),Toast.LENGTH_LONG).show();
+                Toast.makeText(SecondeActivity.this,getString(R.string.downloaded),Toast.LENGTH_LONG).show();
                 //setAdapterBeer...
             }
 

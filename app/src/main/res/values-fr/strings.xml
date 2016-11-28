@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Mon Application</string>
-    <string name="hello">bonjour le monde</string>
-    <string name="button">mon boutton</string>
-    <string name="first">premier</string>
-    <string name="second">deuxieme</string>
-    <string name="message">mon deuxième item</string>
-    <string name="third">troisième</string>
-    <string name="donwloaded">Bieres json downloaded !</string>
+    <string name="app_name">Hearthstone Cards</string>
+    <string name="random">Aléatoire</string>
+    <string name="alpha">Ordre alphabétique</string>
+    <string name="setting">Paramètres</string>
+    <string name="downloaded">Fichier téléchargé</string>
+
 </resources>
