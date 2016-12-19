@@ -75,7 +75,7 @@ public class SecondeActivity extends AppCompatActivity {
             // create refresh
             spinner.setVisibility(View.GONE);
             Intent intentNot = new Intent(SecondeActivity.this, SecondeActivity.class);
-            PendingIntent contentIntent = PendingIntent.getActivity(SecondeActivity.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent contentIntent = PendingIntent.getActivity(SecondeActivity.this, 0, intentNot, PendingIntent.FLAG_UPDATE_CURRENT);
 
             NotificationCompat.Builder builder = (NotificationCompat.Builder) new NotificationCompat.Builder(SecondeActivity.this)
                     .setContentTitle(getString(R.string.downloaded))
