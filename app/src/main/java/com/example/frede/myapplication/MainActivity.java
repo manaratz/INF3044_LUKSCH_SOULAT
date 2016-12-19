@@ -9,11 +9,17 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,8 +30,13 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.hearthstone_icon);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setTitle("    Hearthstone Cards");
+        getSupportActionBar().setTitle(R.string.CustomTitle);
     }
+    public void Alpha(View view) {
+        Intent i = new Intent(MainActivity.this, SecondeActivity.class);
+        startActivity(i);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,43 +51,43 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            case R.id.fItem :
-                Intent i = new Intent(MainActivity.this, SecondeActivity.class);
-                startActivity(i);
-                break;
 
-            case R.id.sItem :
-                Intent j = new Intent(MainActivity.this, AlphaActivity.class);
-                startActivity(j);
-                break;
             case R.id.tItem :
                 new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Settings")
-                        .setMessage("Back color :")
-                        .setNeutralButton("ok", new DialogInterface.OnClickListener() {
+                        .setTitle(R.string.AlertTitle)
+                        .setMessage(R.string.AlertText)
+                        .setPositiveButton(R.string.Clear, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-
+                                new File(getCacheDir() + "/" + "cards.json").getAbsoluteFile().delete();
+                            }
+                        })
+                        .setNegativeButton(R.string.Cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // User cancelled the dialog
                             }
                         })
                         .show();
 
-          /*      Intent intent = new Intent(this, MainActivity.class);
-                PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                break;
+            case R.id.About:
+                final SpannableString s = new SpannableString(getString(R.string.aboutText));
+                Linkify.addLinks(s, Linkify.ALL);
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+                dialogBuilder.setTitle(R.string.about);
+                TextView textView = new TextView(this);
+                textView.setMovementMethod(LinkMovementMethod.getInstance());
+                textView.setText(s);
+                dialogBuilder.setView(textView);
+                dialogBuilder.setNeutralButton(R.string.Confirm, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
 
-                NotificationCompat.Builder builder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                        .setContentTitle("My notif")
-                        .setSmallIcon(android.R.drawable.sym_def_app_icon)
-                        .setContentIntent(contentIntent)
-                        .setAutoCancel(true)
-                        .setContentText("My content");
+                        .show();
 
 
-                NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                manager.notify(1,builder.build());
-
-
-*/
             default:
                 break;
         }

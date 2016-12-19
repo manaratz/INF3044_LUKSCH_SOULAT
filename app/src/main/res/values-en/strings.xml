@@ -5,5 +5,16 @@
     <string name="alpha">Alphabetical order</string>
     <string name="setting">Settings</string>
     <string name="downloaded">File downloaded</string>
-
+    <string name="needToDownload">Downloading file</string>
+    <string name="AlreadyDown">File already downloaded</string>
+    <string name="CardLanguage">enUS</string>
+    <string name="about">About</string>
+    <string name="aboutText">"  Cards provided by https://hearthstonejson.com/"</string>
+    <string name="Welcome">Welcome in Hearthstone Cards. Please select a view option among those avalaible below :</string>
+    <string name="CardDownloaded" >Cards have been downloaded!</string>
+    <string name="AlertTitle" >Clear cache</string>
+    <string name="AlertText" >Do you want to clear local file ?</string>
+    <string name="Clear" >Clear</string>
+    <string name="Cancel" >Cancel</string>
+    <string name="DelCache" >Clear cache</string>
 </resources>

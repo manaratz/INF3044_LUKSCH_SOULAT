@@ -16,9 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondeActivity" />
-        <activity android:name=".RandomActivity" />
-        <activity android:name=".AlphaActivity" />
-
 
         <service
             android:name=".GetBieresServices"

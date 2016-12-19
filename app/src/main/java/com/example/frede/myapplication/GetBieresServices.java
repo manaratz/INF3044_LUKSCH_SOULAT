@@ -74,18 +74,16 @@ public class GetBieresServices extends IntentService {
      */
     private void handleActionBiers() {
         // TODO: Handle action Biers
-       Log.i("tag","message");
-        Log.d("tag","Thread service name:"+Thread.currentThread().getName());
         URL url = null;
         try {
-            url = new URL("https://api.hearthstonejson.com/v1/15300/enUS/cards.json");
+            url = new URL("https://api.hearthstonejson.com/v1/latest/"+getString(R.string.CardLanguage)+"/cards.collectible.json");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
             if(HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
+
                 copyInputStreamToFile(conn.getInputStream(),
-                        new File(getCacheDir(), "bieres.json"));
-                Log.d("tag", "Bieres json downloaded !");
+                        new File(getCacheDir(), "cards.json"));
                 LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(SecondeActivity.BIERS_UPDATE));
 
 
@@ -102,7 +100,7 @@ public class GetBieresServices extends IntentService {
             OutputStream out = new FileOutputStream(file);
             byte[] buf = new byte[1024];
             int len;
-            while ((len=in.read(buf))>0){
+            while ((len=inputStream.read(buf))>0){
                 out.write(buf,0,len);
             }
             out.close();

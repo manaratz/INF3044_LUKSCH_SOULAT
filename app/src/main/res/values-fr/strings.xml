@@ -5,5 +5,17 @@
     <string name="alpha">Ordre alphabétique</string>
     <string name="setting">Paramètres</string>
     <string name="downloaded">Fichier téléchargé</string>
+    <string name="needToDownload">Téléchargement du fichier</string>
+    <string name="AlreadyDown">Fichier déjà téléchargé</string>
+    <string name="CardLanguage">frFR</string>
+    <string name="about">A propos</string>
+    <string name="aboutText">Cartes fournis par https://hearthstonejson.com/</string>
+    <string name="Welcome">Bienvenue dans Hearthstone Cards. Selectionnez une vue parmis celle disponible ci-dessous :</string>
+    <string name="CardDownloaded" >Les cartes ont été téléchargées !</string>
+    <string name="AlertTitle" >Supprimer le cache</string>
+    <string name="AlertText" >Voulez-vous supprimer le fichier local ?</string>
+    <string name="Clear" >Effacer</string>
+    <string name="Cancel" >Annuler</string>
+    <string name="DelCache" >Suppimer le cache</string>
 
 </resources>
